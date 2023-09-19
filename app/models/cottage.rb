@@ -1,0 +1,2 @@
+class Cottage < ApplicationRecord
+end
