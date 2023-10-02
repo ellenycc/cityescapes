@@ -1,0 +1,15 @@
+<div class="create-form">
+  <%= form_with model: @cottage do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+    <%= f.label :description %>
+    <%= f.text_field :description  %>
+    <%= f.label :price, "Price per night:" %>
+    <%= f.number_field :price %>
+    <%= f.label :guests, "Number of guests:" %>
+    <%= f.number_field :guests %>
+    <%= f.submit "Create cottage" %>
+  <% end %>
+</div>
