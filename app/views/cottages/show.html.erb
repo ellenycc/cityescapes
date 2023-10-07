@@ -3,23 +3,50 @@
 <div class="container margin-top-negative">
   <div class="row">
     <div class="col-8">
-      <div class="cottage-show-card">
-        <h1><strong><%= @cottage.name %></strong></h1>
-        <h4 class="d-inline-block text-emphasis mt-3 me-4"><%= @cottage.address %></h4>
-        <h4 class="d-inline-block text-muted mx-4 ms-5"><%= @cottage.description %></h4>
+      <div class="cottage-show-card mt-5">
+        <h3><%= @cottage.name %></h3>
+        <p class="d-inline-block text-emphasis mt-3 me-4"><i class="fa-solid fa-location-dot" style="color: #5f6a7c;"></i> <%= @cottage.address %></p>
         <div class="cottage-image">
+          <% if @cottage.photo.attached? %>
+            <%= image_tag @cottage.photo, width: '100%' %>
+          <% end %>
         </div>
       </div>
 
-      <div class="cottage-show-card">
-        <h2>Description</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae tempus quam pellentesque nec. Sed enim ut sem viverra aliquet eget sit amet. Convallis a cras semper auctor neque vitae. Mauris cursus mattis molestie a iaculis at erat. Lobortis feugiat vivamus at augue eget arcu dictum. Non blandit massa enim nec dui nunc. Lectus mauris ultrices eros in cursus turpis massa tincidunt dui. Massa tincidunt dui ut ornare lectus sit amet est. Commodo odio aenean sed adipiscing diam donec adipiscing tristique. Scelerisque eu ultrices vitae auctor.</p>
+      <div class="cottage-show-card mt-5">
+        <h4>Overview</h4>
+        <p>3 bedrooms</p>
+        <p><i class="fa-solid fa-users" style="color: #5f6a7c;"></i>  <%= @cottage.number_of_guests %> guests max.</p>
+      </div>
+
+      <div class="cottage-show-card mt-5">
+        <h4>Description</h4>
+        <p><%= @cottage.description %></p>
       </div>
     </div>
 
-    <div class="col-4">
-      <div class="flight-show-card">
-        <h4>Book this flight</h4>
+    <div class="col-4 mt-5">
+      <div class="cottage-show-card book-form">
+        <h4>Book this cottage</h4>
+        <form>
+          <div class="form-group mb-2">
+            <label for="start-date-label">From: </label>
+            <input type="text" class="form-control" id="start-date-label" aria-describedby="startLabel" placeholder="1/10/2023">
+          </div>
+          <div class="form-group mb-2">
+            <label for="end-date-label">To: </label>
+            <input type="text" class="form-control" id="end-date-label" aria-describedby="endLabel" placeholder="7/10/2023">
+          </div>
+          <div class="form-group mb-2">
+            <label for="guests">No. of guests</label>
+            <input type="guests" class="form-control" id="guests" placeholder="6 guests">
+            <div class="form-text d-flex justify-content-between">
+              <p>Price per night</p>
+              <p>From £<%= @cottage.price_per_night%></p>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%">Check Availability</button>
+        </form>
       </div>
     </div>
   </div>

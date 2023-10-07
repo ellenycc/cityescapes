@@ -1,0 +1,12 @@
+<div class="cottage-form">
+  <h3>Add Property Listing</h3>
+  <%= simple_form_for @cottage do |f| %>
+    <%= f.input :name, label: "Title" %>
+    <%= f.input :address, label: "Address" %>
+    <%= f.input :description, label: "Description" %>
+    <%= f.input :number_of_guests, label: "Number of guests:" %>
+    <%= f.input :price_per_night, label: "Price per night:" %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit "Create cottage", class: "btn btn-primary", style: "width: 100%" %>
+  <% end %>
+</div>

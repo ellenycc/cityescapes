@@ -5,8 +5,12 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-
+puts "Cleaning up database..."
 Cottage.destroy_all
+
+puts "Database cleaned"
+
+require "open-uri"
 
 Cottage.create!([
   {
@@ -14,7 +18,7 @@ Cottage.create!([
     address: '10 Clifton Gardens London W9 1DT',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     price_per_night: 90,
-    number_of_guests: 6
+    number_of_guests: 6,
   },
   {
     name: 'Lovely Cottage in Hemswell with Private Parking',

@@ -17,9 +17,26 @@ class CottagesController < ApplicationController
     redirect_to cottage_path(@cottage)
   end
 
+  def edit
+    @cottage = Cottage.find(params[:id])
+    @cottage.photo.attach(params[:photo])
+  end
+
+  def update
+    @cottage = Cottage.find(params[:id])
+    @cottage.update(cottage_params)
+    redirect_to cottage_path(@cottage)
+  end
+
+  def destroy
+    @cottage = Cottage.find(params[:id])
+    @cottage.destroy
+    redirect_to cottages_path
+  end
+
   private
 
   def cottage_params
-    params.require(:cottage).permit(:name, :address, :description, :price_per_night, :number_of_guests)
+    params.require(:cottage).permit(:name, :address, :description, :price_per_night, :number_of_guests, :photo)
   end
 end
