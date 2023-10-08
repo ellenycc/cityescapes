@@ -1,10 +1,17 @@
 class CottagesController < ApplicationController
   def index
     @cottages = Cottage.all
+    @markers = @cottages.geocoded.map do |cottage|
+      {
+        lat: cottage.latitude,
+        lng: cottage.longitude
+      }
+    end
   end
 
   def show
     @cottage = Cottage.find(params[:id])
+    
   end
 
   def new

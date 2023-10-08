@@ -1,5 +1,3 @@
-<div class="cover"></div>
-
 <div class="container margin-top-negative">
   <div class="row">
     <div class="col-8">
@@ -19,9 +17,19 @@
         <p><i class="fa-solid fa-users" style="color: #5f6a7c;"></i>  <%= @cottage.number_of_guests %> guests max.</p>
       </div>
 
-      <div class="cottage-show-card mt-5">
+      <hr class="solid my-5">
+      <div class="cottage-show-card">
         <h4>Description</h4>
         <p><%= @cottage.description %></p>
+      </div>
+
+      <hr class="solid my-5">
+      <div class="cottage-show-card">
+        <h4>Location</h4>
+        <div class="map-container mb-5" style="width: 100%; height: 500px;"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
       </div>
     </div>
 
@@ -51,3 +59,5 @@
     </div>
   </div>
 </div>
+
+<%= render "shared/footer" %>
