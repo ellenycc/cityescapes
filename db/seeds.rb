@@ -15,28 +15,28 @@ require "open-uri"
 Cottage.create!([
   {
     name: 'Charming Cottage in Cornwall with Garden & Jacuzzi',
-    address: '10 Clifton Gardens London W9 1DT',
+    address: 'Cornwall, England',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     price_per_night: 90,
     number_of_guests: 6,
   },
   {
     name: 'Lovely Cottage in Hemswell with Private Parking',
-    address: 'Hemswell',
+    address: 'Hemswell, Lincolnshire',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    price_per_night: 75,
+    price_per_night: 86,
     number_of_guests: 5
   },
   {
     name: 'Wonderful Cottage in Bampton with Barbecue & Garden',
-    address: 'Bampton',
+    address: 'Bampton, Oxfordshire',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     price_per_night: 75,
     number_of_guests: 5
   },
   {
     name: 'Nice Lodge in Great Busby with Sauna',
-    address: 'Great Busby, England',
+    address: 'Great Busby, North Yorkshire',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     price_per_night: 83,
     number_of_guests: 4
