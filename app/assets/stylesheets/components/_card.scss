@@ -1,8 +1,14 @@
 .cottage-card {
     border-radius: 8px;
+    height: 520px;
     overflow: hidden;
 }
 
-// body {
-//   font-family: 'Poppins', sans-serif;
-// }
+.cottage-card-image {
+  height: 300px
+}
+
+.cottage-card-image img {
+  display: block;
+  height: 100%;
+}

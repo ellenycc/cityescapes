@@ -15,14 +15,13 @@ export default class extends Controller {
       container: this.element,
       style: "mapbox://styles/mapbox/streets-v12",
       center: [this.markerValue.lng, this.markerValue.lat],
-      zoom: 2
+      zoom: 9
     });
 
     this.#addMarkerToMap();
     this.#fitMapToMarker();
   }
   #addMarkerToMap() {
-    console.log(this.markerValue);
     new mapboxgl.Marker()
       .setLngLat([ this.markerValue.lng, this.markerValue.lat ])
       .addTo(this.map)

@@ -14,7 +14,7 @@
             <div class="cottage-card shadow-sm">
               <div class="cottage-card-image">
                 <% if cottage.photo.attached? %>
-                  <%= image_tag cottage.photo, class: "img-fluid", width: '100%' %>
+                  <%= image_tag cottage.photo, class: "img-fluid", width: '100%', height: 'auto' %>
                 <% end %>
               </div>
               <div class="cottage-card-body m-3">
